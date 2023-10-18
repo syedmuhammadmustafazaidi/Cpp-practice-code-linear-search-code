@@ -1,0 +1,42 @@
+
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int linearSearch(int array[] ,int size , int searchValue)
+{
+    for(int i ; i<size ; i++ )
+    {
+        
+        if(searchValue == array[i]){
+            
+            return i;
+        }
+    }
+    
+    return -1;
+    
+}
+
+int main() {
+    
+    int array[] = { 1,2,3,4,5};
+    int searchValue =3;
+   int size = sizeof(array)/sizeof(array[0]);
+   
+   int result =  linearSearch( array , size ,  searchValue);
+ 
+
+if(result ==-1){
+    
+    cout<<"Error Ocurred !";
+}
+else{
+     cout<<"Index Found at "<<result<<endl;
+}
+
+
+    return 0;
+}
