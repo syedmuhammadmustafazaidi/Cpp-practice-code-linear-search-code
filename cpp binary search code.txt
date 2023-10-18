@@ -1,0 +1,41 @@
+ 
+#include <iostream>
+using namespace std;
+int binarySearch(int array[], int size, int searchValue) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int middleValue = left + (right - left) / 2;
+cout<<"middle value is \n"<<middleValue;
+        if (array[middleValue] == searchValue) {
+            return middleValue;
+        }
+        else if (array[middleValue] < searchValue) {
+            left = middleValue + 1;
+        }
+        else {
+            right = middleValue - 1;
+        }
+    }
+
+    return -1; // Return -1 if search value is not found
+}
+
+int main() {
+    int array[] = {1, 2, 3, 4, 5};
+    int searchValue = 3;
+    int size = sizeof(array) / sizeof(array[0]);
+
+    int result = binarySearch(array, size, searchValue);
+
+    if(result == -1) {
+        std::cout << "Search value not found." << std::endl;
+    }
+    else {
+        std::cout << "\nSearch value found at index: " << result << std::endl;
+    }
+
+    return 0;
+}
+ 
