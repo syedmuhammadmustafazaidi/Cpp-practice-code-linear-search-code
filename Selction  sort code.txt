@@ -1,0 +1,36 @@
+link Of website :    https://www.softwaretestinghelp.com/cpp-string-array/
+
+
+ Here is a sample selection sort code in C++:
+
+```c++
+#include <iostream>
+using namespace std;
+
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[minIndex], arr[i]);
+    }
+}
+
+int main() {
+    int arr[] = {38, 27, 43, 3, 9, 82, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    selectionSort(arr, n);
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
+```
+
+This code sorts an array of integers in ascending order using selection sort. The `selectionSort` function takes 
+an array and its length as input, and modifies the array in place to be sorted. The main function initializes an array `arr`, 
+calls `selectionSort` to sort it, and then prints the sorted array to the console.
