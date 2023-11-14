@@ -1,0 +1,30 @@
+#include <iostream>
+#include <queue>
+
+int main() {
+    // Declare a queue of integers
+    std::queue<int> myQueue;
+
+    // Adding elements to the queue
+    myQueue.push(10);
+    myQueue.push(20);
+    myQueue.push(30);
+    myQueue.push(40);
+
+    // Accessing the front element of the queue
+    std::cout << "Front element of the queue: " << myQueue.front() << std::endl;
+
+    // Removing elements from the queue
+    myQueue.pop();
+
+    // Checking the new front element after popping
+    std::cout << "Front element after popping: " << myQueue.front() << std::endl;
+
+    // Checking the size of the queue
+    std::cout << "Size of the queue: " << myQueue.size() << std::endl;
+
+    // Checking if the queue is empty
+    std::cout << "Is the queue empty? " << (myQueue.empty() ? "Yes" : "No") << std::endl;
+
+    return 0;
+}
