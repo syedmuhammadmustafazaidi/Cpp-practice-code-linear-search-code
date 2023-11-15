@@ -1,0 +1,40 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int stack[5];
+int top =-1;
+
+
+void push(int x){
+    
+    if(top>=5){
+        cout<<"Stack is Empty";
+        
+        
+    }
+    else{
+        top++;
+        stack [top] =x;
+    };
+}
+    void display(){
+        for(int i=0;i<=top;i++){
+            cout<<stack[i];
+        }
+    }
+    
+
+
+int main() {
+    
+    push(2);
+        push(89.9);  
+    push(2);
+        push(89.9);  
+    push(2);
+  push(2);
+     
+    display();
+    
+    return 0;
+}
