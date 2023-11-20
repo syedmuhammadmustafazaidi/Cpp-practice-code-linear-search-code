@@ -1,0 +1,78 @@
+#include <iostream>
+
+struct Node {
+    int data;
+    Node* link;
+};
+
+Node* head = nullptr;
+
+void init(int num) {
+    Node* newNode = new Node;
+    newNode->data = num;
+    newNode->link = nullptr;
+    head = newNode;
+}
+
+void append(int num) {
+    Node* newNode = new Node;
+    Node* temp = head;
+
+    newNode->data = num;
+    newNode->link = nullptr;
+
+    while (temp->link != nullptr) {
+        temp = temp->link;
+    }
+
+    temp->link = newNode;
+}
+
+void addBeg(int num) {
+    Node* newNode = new Node;
+    newNode->data = num;
+    newNode->link = head;
+    head = newNode;
+}
+
+void del(int loc) {
+    Node* oldNode = nullptr;
+    Node* temp = head;
+
+    for (int i = 0; i < loc; i++) {
+        oldNode = temp;
+        temp = temp->link;
+    }
+
+    oldNode->link = temp->link;
+    delete temp;
+}
+
+void addAfter(int loc, int num) {
+    Node* newNode = new Node;
+    Node* temp = head;
+
+    for (int i = 0; i < loc; i++) {
+        temp = temp->link;
+    }
+
+    newNode->data = num;
+    newNode->link = temp->link;
+    temp->link = newNode;
+}
+
+int main() {
+    init(10);
+    append(20);
+    addBeg(5);
+    addAfter(2, 15);
+    del(1);
+
+    Node* curr = head;
+    while (curr != nullptr) {
+        std::cout << curr->data << " ";
+        curr = curr->link;
+    }
+
+    return 0;
+}
