@@ -1,0 +1,75 @@
+using ConsoleApplication63;
+using System;
+
+namespace ConsoleApplication63
+{
+    interface IColor
+    {
+        void Coloring(); // Interface cannot have method body 
+        void Info(); // Just have the signature(s) of the method
+
+
+
+    }
+
+    class Dreeen : IColor
+    {
+
+        public void Info()
+        {
+            Console.WriteLine("This one has a White Color and a Green Background Color");
+        }
+
+        public void Coloring()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Green;
+        }
+    }
+
+
+    class Reden : IColor
+    {
+
+        public void Info()
+        {
+
+            Console.WriteLine("This one has a White Color and a Red Background Color");
+        }
+
+        public void Coloring()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Red;
+
+
+        }
+
+
+    }
+
+
+
+    class Program
+    {
+
+        public static void Main(string[] args)
+        {
+
+
+            IColor green = new Dreeen();
+
+            green.Coloring();
+            green.Info();
+
+
+
+            IColor red = new Reden();
+            red.Coloring();
+            red.Info();
+
+            Console.ReadKey();
+
+        }
+    }
+} 
